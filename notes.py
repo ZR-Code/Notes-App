@@ -51,19 +51,19 @@ def openNewWindow():
     f.close()
 #Files
 # Show Image
-show_img = Image.open('/Users/zaidr/Downloads/show.png')
+show_img = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/show.png')
 show_img = show_img.resize((35, 35))
 SHOW_IMG = ImageTk.PhotoImage(show_img)
 # Hide Image
-hide_img = Image.open('/Users/zaidr/Downloads/hide.png')
+hide_img = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/hide.png')
 hide_img = hide_img.resize((35, 35))
 HIDE_IMG = ImageTk.PhotoImage(hide_img)
 # Add Image
-add_img = Image.open('/Users/zaidr/Downloads/plus.png')
+add_img = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/plus.png')
 add_img = add_img.resize((35, 35))
 ADD_IMG = ImageTk.PhotoImage(add_img)
 # Delete Image
-delete_img = Image.open('/Users/zaidr/Downloads/del.png')
+delete_img = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/del.png')
 delete_img = delete_img.resize((35, 35))
 DELETE_IMG = ImageTk.PhotoImage(delete_img)
 #Components
