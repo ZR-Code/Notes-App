@@ -21,6 +21,10 @@ def get_box():
     f.close()
     notes.insert(1 + i, retrieve)
     i += 1
+
+    date_question = Toplevel(window)
+    date_question.title("Due Date")
+    date_question.geometry("200x200")
 def show_notes( ):
     notes.place(x=107, y=150)
 def fater():
