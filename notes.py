@@ -24,7 +24,14 @@ def get_box():
 
     date_question = Toplevel(window)
     date_question.title("Due Date")
-    date_question.geometry("200x200")
+    date_question.geometry("100x100")
+    date_question.resizable(False, False)
+    y_text = Label(date_question, text="y", font="Times").place(x=20, y=30)
+    m_text = Label(date_question, text="m", font="Times").place(x=43, y=30)
+    d_text = Label(date_question, text="d", font="Times").place(x=70, y=30)
+    year = Text(date_question, height="1", width="4", font="Times").place(x=10, y=50)
+    month = Text(date_question, height="1", width="2", font="Times").place(x=40, y=50)
+    day = Text(date_question, height="1", width="2", font="times").place(x=65,y=50)
 def show_notes( ):
     notes.place(x=107, y=150)
 def fater():
