@@ -23,14 +23,22 @@ def get_box():
     i += 1
 def show_notes( ):
     notes.place(x=107, y=150)
-def delete():
+def fater():
     db = notes.curselection()
+    results = ''
+    for i in db:
+        results = '\u0336'.join(notes.get(i)) + '\u0336'
+
+    print(results)
+ 
 
     db = int(db[0])
-    notes.delete(db )
+    notes.delete(db)
+    notes.insert(1, results)
 def hide_notes(): 
     notes.place_forget()
 def openNewWindow():
+
 
      
     # Toplevel object which will
@@ -49,6 +57,10 @@ def openNewWindow():
     Label(newWindow,
           text =str(f.read())).pack()
     f.close()
+def del_img():
+    dc = notes.curselection()
+    dc = int(dc[0])
+    notes.delete(dc)
 #Files
 # Show Image
 show_img = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/show.png')
@@ -62,24 +74,30 @@ HIDE_IMG = ImageTk.PhotoImage(hide_img)
 add_img = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/plus.png')
 add_img = add_img.resize((35, 35))
 ADD_IMG = ImageTk.PhotoImage(add_img)
+# Mark Image
+mark = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/right.png')
+mark = mark.resize((35, 35))
+MARK_IMG = ImageTk.PhotoImage(mark)
 # Delete Image
-delete_img = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/del.png')
-delete_img = delete_img.resize((35, 35))
-DELETE_IMG = ImageTk.PhotoImage(delete_img)
+delete = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/del.png')
+delete = delete.resize((35, 35))
+DELETE_IMG = ImageTk.PhotoImage(delete)
 #Components
-delete = Button(window, text="Delete", command=delete, image=DELETE_IMG, borderwidth=0)
-hide = Button(window, command=hide_notes, text="Hide Notes", font="Times", image=HIDE_IMG, borderwidth=0)
+delete_img = Button(window, text="del", command=del_img, image=DELETE_IMG)
+mark = Button(window, text="Delete", command=fater, image=MARK_IMG)
+hide = Button(window, command=hide_notes, text="Hide Notes", font="Times", image=HIDE_IMG)
 ENTRY_BOX = Text(window, height="3", width="35", font="Times")
 ADD_NOTE = Button(window, command=get_box, text="Add Note", font="Times", image=ADD_IMG)  
 show_notes = Button(window, command=show_notes, text="Show Notes", font="Times", image=SHOW_IMG)
 show_all = Button(window, text="Show All Notes", command=openNewWindow, font="Times")
 #Pack
-show_all.pack(pady=5)
+show_all.pack(pady=6)
 ENTRY_BOX.pack()
-ADD_NOTE.place(x=100, y= 100)
-show_notes.place(x=150, y=100)
-hide.place(x=200, y=100)
-delete.place(x=250, y=100)
+ADD_NOTE.place(x=75, y= 100)
+show_notes.place(x=125, y=100)
+hide.place(x=175, y=100)
+mark.place(x=225, y=100)
+delete_img.place(x=275, y=100)
 
 
 
