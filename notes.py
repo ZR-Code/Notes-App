@@ -1,6 +1,7 @@
 #init
 from tkinter import *
 from PIL import Image, ImageTk
+import time
 
 window = Tk()
 window.geometry("400x400")
@@ -29,9 +30,12 @@ def get_box():
     y_text = Label(date_question, text="y", font="Times").place(x=20, y=30)
     m_text = Label(date_question, text="m", font="Times").place(x=43, y=30)
     d_text = Label(date_question, text="d", font="Times").place(x=70, y=30)
-    year = Text(date_question, height="1", width="4", font="Times").place(x=10, y=50)
-    month = Text(date_question, height="1", width="2", font="Times").place(x=40, y=50)
-    day = Text(date_question, height="1", width="2", font="times").place(x=65,y=50)
+    YEAR = Text(date_question, height="1", width="4", font="Times").place(x=10, y=50)
+    MONTH = Text(date_question, height="1", width="2", font="Times").place(x=40, y=50)
+    DAY = Text(date_question, height="1", width="2", font="times").place(x=65,y=50)
+    def submit():
+        pass
+    submit_note = Button(date_question, text="Submit Date", font="Times", command=submit)
 def show_notes( ):
     notes.place(x=107, y=150)
 def fater():
@@ -94,6 +98,7 @@ delete = Image.open('/Users/zaidr/Desktop/Coding/Notes-App/Images/del.png')
 delete = delete.resize((35, 35))
 DELETE_IMG = ImageTk.PhotoImage(delete)
 #Components
+
 delete_img = Button(window, text="del", command=del_img, image=DELETE_IMG)
 mark = Button(window, text="Delete", command=fater, image=MARK_IMG)
 hide = Button(window, command=hide_notes, text="Hide Notes", font="Times", image=HIDE_IMG)
